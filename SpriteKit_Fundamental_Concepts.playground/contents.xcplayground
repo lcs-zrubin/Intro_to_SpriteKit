@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<playground version='6.0' target-platform='macos'>
+<playground version='6.0' target-platform='macos' display-mode='rendered' executeOnSourceChanges='false'>
     <pages>
         <page name='Introduction'/>
         <page name='Developer Documentation'/>
+        <page name='Game Loop'/>
+        <page name='Node Tree'/>
+        <page name='Node Types'/>
+        <page name='Sandbox'/>
     </pages>
 </playground>
