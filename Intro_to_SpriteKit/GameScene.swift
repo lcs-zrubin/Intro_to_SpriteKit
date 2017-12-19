@@ -10,56 +10,58 @@ import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene {
-    
-    private var label : SKLabelNode?
-    private var spinnyNode : SKShapeNode?
-    
+
+    // This method runs once after the scene loads
     override func didMove(to view: SKView) {
+
+        // Set the background color
+        backgroundColor = SKColor.black
         
-        // Get label node from scene and store it for use later
-        self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
-        if let label = self.label {
-            label.alpha = 0.0
-            label.run(SKAction.fadeIn(withDuration: 2.0))
-        }
+        // Set the midpoint value
+        let midPoint = CGPoint(x: size.width / 2.0, y: size.height / 2.0)
+
+        // Add the nyan cat
+        let nyanCat = SKSpriteNode(imageNamed: "Nyancat")
+        nyanCat.position = midPoint
+
+        // Define a series of animations (bounce up and down)
+        let actionMoveUp = SKAction.moveBy(x: 0, y: 10, duration: 0.15)
+        let actionMoveDown = SKAction.moveBy(x: 0, y: -10, duration: 0.15)
+        let actionSequence = SKAction.sequence([actionMoveUp, actionMoveDown])
+        let actionRepeat = SKAction.repeatForever(actionSequence)
+
+        // Attach the bounce up and down actions to the cat
+        nyanCat.run(actionRepeat)
         
-        // Create shape node to use during mouse interaction
-        let w = (self.size.width + self.size.height) * 0.05
-        self.spinnyNode = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.3)
+        // Ensure the sprite ends up in a layer above the background node
+        nyanCat.zPosition = 10
         
-        if let spinnyNode = self.spinnyNode {
-            spinnyNode.lineWidth = 2.5
-            
-            spinnyNode.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(Double.pi), duration: 1)))
-            spinnyNode.run(SKAction.sequence([SKAction.wait(forDuration: 0.5),
-                                              SKAction.fadeOut(withDuration: 0.5),
-                                              SKAction.removeFromParent()]))
-        }
+        // Add the cat to the scene
+        self.addChild(nyanCat)
+        
+        // Get a starfield and add to scene
+        let stars = StarField(within: self.frame)
+        self.addChild(stars)
+        
+        // Add the rainbow stream (it automatically adds itself to the scene)
+        let _ = RainbowStream(on: self, target: nyanCat)
+        
+        // Make nyan cat happy – play music forever!
+        let backgroundMusic = SKAudioNode(fileNamed: "nyan-cat-tune.mp3")
+        self.addChild(backgroundMusic)
+
     }
     
-    
     func touchDown(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.green
-            self.addChild(n)
-        }
+
     }
     
     func touchMoved(toPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.blue
-            self.addChild(n)
-        }
+
     }
     
     func touchUp(atPoint pos : CGPoint) {
-        if let n = self.spinnyNode?.copy() as! SKShapeNode? {
-            n.position = pos
-            n.strokeColor = SKColor.red
-            self.addChild(n)
-        }
+
     }
     
     override func mouseDown(with event: NSEvent) {
@@ -77,16 +79,14 @@ class GameScene: SKScene {
     override func keyDown(with event: NSEvent) {
         switch event.keyCode {
         case 0x31:
-            if let label = self.label {
-                label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-            }
+            print("Space bar pressed")
         default:
             print("keyDown: \(event.characters!) keyCode: \(event.keyCode)")
         }
     }
     
-    
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
     }
+    
 }

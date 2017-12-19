@@ -8,25 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		0E98B6FD1FE986C40030D09D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E98B6FC1FE986C40030D09D /* AppDelegate.swift */; };
-		0E98B6FF1FE986C40030D09D /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E98B6FE1FE986C40030D09D /* GameScene.sks */; };
-		0E98B7011FE986C40030D09D /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0E98B7001FE986C40030D09D /* Actions.sks */; };
 		0E98B7031FE986C40030D09D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E98B7021FE986C40030D09D /* GameScene.swift */; };
 		0E98B7051FE986C40030D09D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E98B7041FE986C40030D09D /* ViewController.swift */; };
 		0E98B7071FE986C40030D09D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E98B7061FE986C40030D09D /* Assets.xcassets */; };
 		0E98B70A1FE986C40030D09D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E98B7081FE986C40030D09D /* Main.storyboard */; };
+		0E98B7131FE98A700030D09D /* StarField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E98B7121FE98A700030D09D /* StarField.swift */; };
+		0E98B7151FE98C870030D09D /* RainbowParticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E98B7141FE98C870030D09D /* RainbowParticle.swift */; };
+		0E98B7171FE990210030D09D /* RainbowStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E98B7161FE990210030D09D /* RainbowStream.swift */; };
+		0E98B7191FE991960030D09D /* nyan-cat-tune.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0E98B7181FE991960030D09D /* nyan-cat-tune.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0E98B6F91FE986C40030D09D /* Intro_to_SpriteKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Intro_to_SpriteKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E98B6FC1FE986C40030D09D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0E98B6FE1FE986C40030D09D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		0E98B7001FE986C40030D09D /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		0E98B7021FE986C40030D09D /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		0E98B7041FE986C40030D09D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0E98B7061FE986C40030D09D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E98B7091FE986C40030D09D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E98B70B1FE986C40030D09D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E98B70C1FE986C40030D09D /* Intro_to_SpriteKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Intro_to_SpriteKit.entitlements; sourceTree = "<group>"; };
+		0E98B7121FE98A700030D09D /* StarField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarField.swift; sourceTree = "<group>"; };
+		0E98B7141FE98C870030D09D /* RainbowParticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainbowParticle.swift; sourceTree = "<group>"; };
+		0E98B7161FE990210030D09D /* RainbowStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainbowStream.swift; sourceTree = "<group>"; };
+		0E98B7181FE991960030D09D /* nyan-cat-tune.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "nyan-cat-tune.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +64,16 @@
 			isa = PBXGroup;
 			children = (
 				0E98B6FC1FE986C40030D09D /* AppDelegate.swift */,
-				0E98B6FE1FE986C40030D09D /* GameScene.sks */,
-				0E98B7001FE986C40030D09D /* Actions.sks */,
 				0E98B7021FE986C40030D09D /* GameScene.swift */,
 				0E98B7041FE986C40030D09D /* ViewController.swift */,
 				0E98B7061FE986C40030D09D /* Assets.xcassets */,
 				0E98B7081FE986C40030D09D /* Main.storyboard */,
 				0E98B70B1FE986C40030D09D /* Info.plist */,
 				0E98B70C1FE986C40030D09D /* Intro_to_SpriteKit.entitlements */,
+				0E98B7121FE98A700030D09D /* StarField.swift */,
+				0E98B7141FE98C870030D09D /* RainbowParticle.swift */,
+				0E98B7161FE990210030D09D /* RainbowStream.swift */,
+				0E98B7181FE991960030D09D /* nyan-cat-tune.mp3 */,
 			);
 			path = Intro_to_SpriteKit;
 			sourceTree = "<group>";
@@ -131,9 +137,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E98B6FF1FE986C40030D09D /* GameScene.sks in Resources */,
 				0E98B7071FE986C40030D09D /* Assets.xcassets in Resources */,
-				0E98B7011FE986C40030D09D /* Actions.sks in Resources */,
+				0E98B7191FE991960030D09D /* nyan-cat-tune.mp3 in Resources */,
 				0E98B70A1FE986C40030D09D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +150,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E98B7151FE98C870030D09D /* RainbowParticle.swift in Sources */,
+				0E98B7131FE98A700030D09D /* StarField.swift in Sources */,
+				0E98B7171FE990210030D09D /* RainbowStream.swift in Sources */,
 				0E98B7051FE986C40030D09D /* ViewController.swift in Sources */,
 				0E98B7031FE986C40030D09D /* GameScene.swift in Sources */,
 				0E98B6FD1FE986C40030D09D /* AppDelegate.swift in Sources */,
