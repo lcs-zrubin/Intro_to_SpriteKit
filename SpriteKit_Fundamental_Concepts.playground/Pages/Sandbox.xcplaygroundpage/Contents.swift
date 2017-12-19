@@ -34,7 +34,7 @@ nyanCat.run(actionRepeat)
 nyanCat.zPosition = 10  // Ensure sprite is above background
 scene.addChild(nyanCat) // Add to the scene
 
-//: Now show the scene within an SKView in the live view area
+//: Now show the scene within an SKView instance in the live view area
 let view = SKView(frame: frame)
 view.presentScene(scene)
 PlaygroundPage.current.liveView = view

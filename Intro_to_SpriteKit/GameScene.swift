@@ -53,7 +53,7 @@ class GameScene: SKScene {
     }
     
     func touchDown(atPoint pos : CGPoint) {
-
+        print("Touch down at x:\(pos.x) and y:\(pos.y)")
     }
     
     func touchMoved(toPoint pos : CGPoint) {
