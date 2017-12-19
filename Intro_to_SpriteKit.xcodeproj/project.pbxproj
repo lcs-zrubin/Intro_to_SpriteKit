@@ -31,6 +31,7 @@
 		0E98B7141FE98C870030D09D /* RainbowParticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainbowParticle.swift; sourceTree = "<group>"; };
 		0E98B7161FE990210030D09D /* RainbowStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainbowStream.swift; sourceTree = "<group>"; };
 		0E98B7181FE991960030D09D /* nyan-cat-tune.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "nyan-cat-tune.mp3"; sourceTree = "<group>"; };
+		0E98B71A1FE993750030D09D /* SpriteKit_Fundamental_Concepts.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SpriteKit_Fundamental_Concepts.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +48,7 @@
 		0E98B6F01FE986C40030D09D = {
 			isa = PBXGroup;
 			children = (
+				0E98B71A1FE993750030D09D /* SpriteKit_Fundamental_Concepts.playground */,
 				0E98B6FB1FE986C40030D09D /* Intro_to_SpriteKit */,
 				0E98B6FA1FE986C40030D09D /* Products */,
 			);
