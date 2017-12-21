@@ -21,30 +21,32 @@ class GameScene: SKScene {
         let midPoint = CGPoint(x: size.width / 2.0, y: size.height / 2.0)
 
         // Add the nyan cat
-        let nyanCat = SKSpriteNode(imageNamed: "Nyancat")
+        let nyanCat = SKSpriteNode(imageNamed: "Toad")
         nyanCat.position = midPoint
-
-        // Define a series of animations (bounce up and down)
-        let actionMoveUp = SKAction.moveBy(x: 0, y: 10, duration: 0.15)
-        let actionMoveDown = SKAction.moveBy(x: 0, y: -10, duration: 0.15)
-        let actionSequence = SKAction.sequence([actionMoveUp, actionMoveDown])
+        nyanCat.setScale(0.4)
+        
+        let luigiGuy = SKSpriteNode(imageNamed: "luigi")
+        luigiGuy.position = CGPoint(x: frame.size.width / 3, y: frame.size.height / 2)
+        luigiGuy.setScale(1.0)
+        self.addChild(luigiGuy)
+        //: To show how happy Nyan Cat is, let's run an action that repeats a sequence of Nyan Cat going up and down forever.
+        let actionMoveUp = SKAction.moveBy(x: 0, y: 50, duration: 0.3)
+        let actionMoveRight = SKAction.moveBy(x: 50, y: 0, duration: 0.3)
+        let actionMoveDown = SKAction.moveBy(x: 0, y: -50, duration: 0.3)
+        let actionMoveLeft = SKAction.moveBy(x: -50, y: 0, duration: 0.3)
+        let actionRotate = SKAction.rotate(byAngle: 360, duration: 1)
+        let actionSequence = SKAction.sequence([actionMoveUp, actionMoveRight, actionMoveDown, actionMoveLeft])
+        let actionRotateRepeat = SKAction.sequence([actionRotate])
         let actionRepeat = SKAction.repeatForever(actionSequence)
-
-        // Attach the bounce up and down actions to the cat
+        let rotateRepeat = SKAction.repeatForever(actionRotateRepeat)
         nyanCat.run(actionRepeat)
-        
-        // Ensure the sprite ends up in a layer above the background node
-        nyanCat.zPosition = 10
-        
-        // Add the cat to the scene
-        self.addChild(nyanCat)
-        
-        // Get a starfield and add to scene
-        let stars = StarField(within: self.frame)
-        self.addChild(stars)
-        
-        // Add the rainbow stream (it automatically adds itself to the scene)
-        let _ = RainbowStream(on: self, target: nyanCat)
+        nyanCat.run(rotateRepeat)
+        luigiGuy.run(actionRepeat)
+        luigiGuy.run(rotateRepeat)
+        nyanCat.zPosition = 10  // Ensure sprite is above background
+        luigiGuy.zPosition = 11
+    
+        self.addChild(nyanCat) // Add to the scene
         
         // Make nyan cat happy – play music forever!
         let backgroundMusic = SKAudioNode(fileNamed: "nyan-cat-tune.mp3")
